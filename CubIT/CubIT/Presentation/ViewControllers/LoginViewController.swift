@@ -21,6 +21,8 @@ class LoginViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+//        emailTextField.delegate = self
+//        passwordTextField.delegate = self
     }
     
     
@@ -33,6 +35,10 @@ class LoginViewController: UIViewController, Storyboarded {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
     }
     
+//    private func loginButtonTapped(){
+//        
+//    }
+    
     private func setUI(){
         view.backgroundColor = .CustomColors.darkGray
         setRegisterButton()
@@ -43,27 +49,33 @@ class LoginViewController: UIViewController, Storyboarded {
     
     private func setRegisterButton(){
         registerButton.titleLabel?.text = loginViewModel.registerButtonTitle
-        registerButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
+        registerButton.titleLabel?.font =  .CustomFont.defaultFont
         registerButton.titleLabel?.textColor = .white
         registerButton.backgroundColor = .CustomColors.secondary
         registerButton.layer.cornerRadius = 5
     }
     
     private func setEmailTextField(){
-        emailTextField.placeholder = loginViewModel.emailTextFieldTitle
+        emailTextField.attributedPlaceholder = NSAttributedString(
+            string: loginViewModel.emailTextFieldTitle,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         emailTextField.backgroundColor = .CustomColors.secondary
         emailTextField.textColor = .white
-        emailTextField.font =  UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
+        emailTextField.font =   .CustomFont.defaultFont
         emailTextField.autocapitalizationType = .none
         emailTextField.autocorrectionType = .no
         emailTextField.returnKeyType = .done
     }
     
     private func setPasswordTextField(){
-        passwordTextField.placeholder = loginViewModel.passwordTextFieldTitle
+        passwordTextField.attributedPlaceholder = NSAttributedString(
+            string: loginViewModel.passwordTextFieldTitle,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         passwordTextField.backgroundColor = .CustomColors.secondary
         passwordTextField.textColor = .white
-        passwordTextField.font =  UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
+        passwordTextField.font =  .CustomFont.defaultFont
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
         passwordTextField.returnKeyType = .done
@@ -72,7 +84,7 @@ class LoginViewController: UIViewController, Storyboarded {
     
     private func setLoginButton(){
         loginButton.titleLabel?.text = loginViewModel.loginButtonTitle
-        loginButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
+        loginButton.titleLabel?.font =  .CustomFont.defaultFont
         loginButton.titleLabel?.textColor = .white
         loginButton.backgroundColor = .CustomColors.secondary
         loginButton.layer.cornerRadius = 5
@@ -80,3 +92,19 @@ class LoginViewController: UIViewController, Storyboarded {
     
     
 }
+
+
+//extension LoginViewController: UITextFieldDelegate{
+//
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//
+//            if textField == emailTextField {
+//                passwordTextField.becomeFirstResponder()
+//            }
+//            else if textField == passwordTextField {
+//                loginButtonTapped()
+//            }
+//
+//            return true
+//        }
+//}

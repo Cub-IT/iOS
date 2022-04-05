@@ -21,7 +21,7 @@ class RegisterViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        // Do any additional setup after loading the view.
+       
     }
     
     
@@ -34,30 +34,38 @@ class RegisterViewController: UIViewController, Storyboarded {
     }
     
     private func setUsernameTextField(){
-        usernameTextField.placeholder = registerViewModel.usernameTextFieldTitle
+        usernameTextField.attributedPlaceholder = NSAttributedString(
+            string: registerViewModel.usernameTextFieldTitle,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         usernameTextField.backgroundColor = .CustomColors.secondary
         usernameTextField.textColor = .white
-        usernameTextField.font =  UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
+        usernameTextField.font =  .CustomFont.defaultFont
         usernameTextField.autocapitalizationType = .none
         usernameTextField.autocorrectionType = .no
         usernameTextField.returnKeyType = .done
     }
     
     private func setEmailTextField(){
-        emailTextField.placeholder = registerViewModel.emailTextFieldTitle
+        emailTextField.attributedPlaceholder = NSAttributedString(
+            string: registerViewModel.emailTextFieldTitle,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         emailTextField.backgroundColor = .CustomColors.secondary
         emailTextField.textColor = .white
-        emailTextField.font =  UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
-        emailTextField.autocapitalizationType = .none
+        emailTextField.font = .CustomFont.defaultFont;        emailTextField.autocapitalizationType = .none
         emailTextField.autocorrectionType = .no
         emailTextField.returnKeyType = .done
     }
     
     private func setPasswordTextField(){
-        passwordTextField.placeholder = registerViewModel.passwordTextFieldTitle
+        passwordTextField.attributedPlaceholder = NSAttributedString(
+            string: registerViewModel.passwordTextFieldTitle,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         passwordTextField.backgroundColor = .CustomColors.secondary
         passwordTextField.textColor = .white
-        passwordTextField.font =  UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
+        passwordTextField.font =   .CustomFont.defaultFont
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
         passwordTextField.returnKeyType = .done
@@ -66,7 +74,7 @@ class RegisterViewController: UIViewController, Storyboarded {
     
     private func setRegisterButton(){
         registerButton.titleLabel?.text = registerViewModel.registerButtonTitle
-        registerButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: CGFloat(18.0))
+        registerButton.titleLabel?.font =  .CustomFont.defaultFont
         registerButton.titleLabel?.textColor = .white
         registerButton.backgroundColor = .CustomColors.secondary
         registerButton.layer.cornerRadius = 5
