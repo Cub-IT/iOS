@@ -11,8 +11,9 @@ import UIKit
 extension UIColor {
    
     struct CustomColors{
-        static let darkGray = UIColor.init(netHex: 0x14141C)
+        static let darkGray = UIColor.init(netHex: 0x15161B)
         static let secondary = UIColor.init(netHex: 0x6C757D)
+        static let green = UIColor.init(red: 35, green: 134, blue: 54)
     }
     
     convenience init(red: Int, green: Int, blue: Int) {

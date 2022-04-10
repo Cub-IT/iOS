@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,19 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cubImg" translatesAutoresizingMaskIntoConstraints="NO" id="cRQ-ur-t1n">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cubImageSquare" translatesAutoresizingMaskIntoConstraints="NO" id="cRQ-ur-t1n">
+                                <rect key="frame" x="29" y="236" width="357" height="424"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="cRQ-ur-t1n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NCO-1K-tF3"/>
-                            <constraint firstItem="cRQ-ur-t1n" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="apK-34-1W3"/>
-                            <constraint firstItem="cRQ-ur-t1n" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rBt-CQ-IyX"/>
-                            <constraint firstItem="cRQ-ur-t1n" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-44" id="rpe-P8-lOE"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.082721836859999995" green="0.085857607419999996" blue="0.10588515549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -38,9 +32,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cubImg" width="1002" height="1232"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="cubImageSquare" width="756" height="724"/>
     </resources>
 </document>

@@ -10,7 +10,8 @@ import UIKit
 
 extension UIFont{
     struct CustomFont{
-        static let defaultFont = UIFont(name: "Helvetica Neue", size: CGFloat(18.0))
+        static let defaultFont = UIFont(name: "Helvetica Neue", size: CGFloat(15.0))
         static let navigationFont = UIFont(name: "HelveticaNeue", size: CGFloat(15.0))
+        static let titleFont =  UIFont(name: "Helvetica Neue", size: CGFloat(21.0))
     }
 }

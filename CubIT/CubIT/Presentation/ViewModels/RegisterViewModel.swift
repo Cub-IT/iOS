@@ -12,4 +12,5 @@ struct RegisterViewModel{
     let usernameTextFieldTitle = "Enter Username"
     let emailTextFieldTitle = "Enter Email"
     let passwordTextFieldTitle = "Enter Password"
+    let passwordTextFieldTitle2 = "Repeat Password"
 }

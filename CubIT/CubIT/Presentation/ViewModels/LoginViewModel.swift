@@ -8,8 +8,11 @@
 import Foundation
 
 struct LoginViewModel{
-    let registerButtonTitle = "Register"
+    let signInLabelText = "Sign in to Cube IT"
+    let registerButtonTitle = "Create an account."
     let emailTextFieldTitle = "Enter Email"
     let passwordTextFieldTitle = "Enter Password"
-    let loginButtonTitle = "LogIn"
+    let loginButtonTitle = "Sign in"
+    let newUserLabelText = "New to Cube IT?"
+    let forgotPasswordButtonTitle = "Forgot password?"
 }

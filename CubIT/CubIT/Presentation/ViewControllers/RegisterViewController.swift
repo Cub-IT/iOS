@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController, Storyboarded {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var passwordTextField2: UITextField!
     
     private let registerViewModel = RegisterViewModel()
     
@@ -24,6 +25,9 @@ class RegisterViewController: UIViewController, Storyboarded {
        
     }
     
+    @IBAction func registerButtonTapped(_ sender: UIButton) {
+        coordinator?.home()
+    }
     
     private func setUI(){
         view.backgroundColor = .CustomColors.darkGray
@@ -31,6 +35,7 @@ class RegisterViewController: UIViewController, Storyboarded {
         setEmailTextField()
         setPasswordTextField()
         setRegisterButton()
+        setPasswordTextField2()
     }
     
     private func setUsernameTextField(){
@@ -53,7 +58,8 @@ class RegisterViewController: UIViewController, Storyboarded {
         )
         emailTextField.backgroundColor = .CustomColors.secondary
         emailTextField.textColor = .white
-        emailTextField.font = .CustomFont.defaultFont;        emailTextField.autocapitalizationType = .none
+        emailTextField.font = .CustomFont.defaultFont
+        emailTextField.autocapitalizationType = .none
         emailTextField.autocorrectionType = .no
         emailTextField.returnKeyType = .done
     }
@@ -70,6 +76,20 @@ class RegisterViewController: UIViewController, Storyboarded {
         passwordTextField.autocorrectionType = .no
         passwordTextField.returnKeyType = .done
         passwordTextField.isSecureTextEntry = true
+    }
+    
+    private func setPasswordTextField2(){
+        passwordTextField2.attributedPlaceholder = NSAttributedString(
+            string: registerViewModel.passwordTextFieldTitle2,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
+        passwordTextField2.backgroundColor = .CustomColors.secondary
+        passwordTextField2.textColor = .white
+        passwordTextField2.font =   .CustomFont.defaultFont
+        passwordTextField2.autocapitalizationType = .none
+        passwordTextField2.autocorrectionType = .no
+        passwordTextField2.returnKeyType = .done
+        passwordTextField2.isSecureTextEntry = true
     }
     
     private func setRegisterButton(){

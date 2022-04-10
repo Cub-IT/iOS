@@ -11,12 +11,21 @@ class LoginViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
+    var delegate: SideMenuViewControllerDelegate?
+    
+    private let loginViewModel = LoginViewModel()
+    
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    private let loginViewModel = LoginViewModel()
-    
+    @IBOutlet weak var signInLabel: UILabel!
+    @IBOutlet weak var cubImage: UIImageView!
+    @IBOutlet weak var githubLoginButton: UIButton!
+    @IBOutlet weak var googleLoginButton: UIButton!
+    @IBOutlet weak var linkedinLiginButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var newUserLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +34,6 @@ class LoginViewController: UIViewController, Storyboarded {
 //        passwordTextField.delegate = self
     }
     
-    
 
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         coordinator?.register()
@@ -33,11 +41,36 @@ class LoginViewController: UIViewController, Storyboarded {
     
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        correctTextField()
+        
+        
+        
+        coordinator?.mainscreen()
     }
     
-//    private func loginButtonTapped(){
-//        
-//    }
+    
+    
+    
+    @IBAction func githubButtonTapped(_ sender: UIButton) {
+        sender.animateTap()
+        
+    }
+    
+    @IBAction func googleButtonTapped(_ sender: UIButton) {
+        sender.animateTap()
+    }
+    
+    
+    @IBAction func linkedinButtonTapped(_ sender: UIButton) {
+        sender.animateTap()
+    }
+}
+
+
+
+
+// MARK: - UI
+extension LoginViewController {
     
     private func setUI(){
         view.backgroundColor = .CustomColors.darkGray
@@ -45,14 +78,28 @@ class LoginViewController: UIViewController, Storyboarded {
         setEmailTextField()
         setPasswordTextField()
         setLoginButton()
+        setImage()
+        setSignInLabel()
+        setLoginButtons()
+        setNewUserLabel()
+        setForgotPasswordButton()
     }
     
-    private func setRegisterButton(){
-        registerButton.titleLabel?.text = loginViewModel.registerButtonTitle
-        registerButton.titleLabel?.font =  .CustomFont.defaultFont
-        registerButton.titleLabel?.textColor = .white
-        registerButton.backgroundColor = .CustomColors.secondary
-        registerButton.layer.cornerRadius = 5
+    private func setImage(){
+        let maskLayer = CAGradientLayer()
+        maskLayer.frame = cubImage.bounds
+        maskLayer.shadowRadius = 5
+        maskLayer.shadowPath = CGPath(roundedRect: cubImage.bounds.insetBy(dx: 5, dy: 5), cornerWidth: 20, cornerHeight: 20, transform: nil)
+        maskLayer.shadowOpacity = 1
+        maskLayer.shadowOffset = CGSize.zero
+        maskLayer.shadowColor = UIColor.white.cgColor
+        cubImage.layer.mask = maskLayer
+    }
+    
+    private func setSignInLabel(){
+        signInLabel.text = loginViewModel.signInLabelText
+        signInLabel.textColor = .white
+        signInLabel.font = .CustomFont.titleFont
     }
     
     private func setEmailTextField(){
@@ -86,11 +133,66 @@ class LoginViewController: UIViewController, Storyboarded {
         loginButton.titleLabel?.text = loginViewModel.loginButtonTitle
         loginButton.titleLabel?.font =  .CustomFont.defaultFont
         loginButton.titleLabel?.textColor = .white
-        loginButton.backgroundColor = .CustomColors.secondary
+        loginButton.backgroundColor = .CustomColors.green
         loginButton.layer.cornerRadius = 5
     }
     
+    private func setForgotPasswordButton(){
+        registerButton.titleLabel?.text = loginViewModel.forgotPasswordButtonTitle
+        registerButton.titleLabel?.font =  UIFont(name: "system", size: 14.0)
+        registerButton.titleLabel?.textColor = .systemBlue
+        registerButton.backgroundColor = .clear
+        registerButton.layer.cornerRadius = 5
+    }
     
+    private func setLoginButtons(){
+        let gitImage = UIImage(named: "GitHubLogo")
+        githubLoginButton.setTitle("", for: .normal)
+        githubLoginButton.setImage(gitImage, for: .normal)
+        googleLoginButton.contentMode = .scaleAspectFill
+        
+        let googleImg = UIImage(named: "GoogleLogo")
+        googleLoginButton.setTitle("", for: .normal)
+        googleLoginButton.setImage(googleImg, for: .normal)
+        googleLoginButton.contentMode = .scaleAspectFill
+        
+        
+        
+        let linkedinImg = UIImage(named: "LinkedInLogo")
+        linkedinLiginButton.setImage(linkedinImg, for: .normal)
+        linkedinLiginButton.setTitle("", for: .normal)
+        linkedinLiginButton.imageView?.contentMode = .scaleAspectFill
+    }
+    
+    private func setNewUserLabel(){
+        newUserLabel.text = loginViewModel.newUserLabelText
+        newUserLabel.textColor = .white
+        newUserLabel.font = .CustomFont.defaultFont
+    }
+    
+    private func setRegisterButton(){
+        registerButton.titleLabel?.text = loginViewModel.registerButtonTitle
+        registerButton.titleLabel?.font =  .CustomFont.defaultFont
+        registerButton.titleLabel?.textColor = .systemBlue
+        registerButton.backgroundColor = .clear
+        registerButton.layer.cornerRadius = 5
+    }
+}
+
+// MARK: - TextField Check
+extension LoginViewController {
+    func correctTextField(){
+        let alert = UIAlertController(title: "Uncorrect data", message: "Please, check email or password", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        
+        if emailTextField.text?.isEmpty ?? true || passwordTextField.text?.isEmpty ?? true{
+            self.present(alert, animated: true, completion: nil)
+                // Display alert message
+                return;
+            }
+        
+    }
 }
 
 

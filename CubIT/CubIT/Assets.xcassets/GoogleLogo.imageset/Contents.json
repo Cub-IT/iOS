@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Знімок екрана 2022-03-27 о 18.01.37.png",
+      "filename" : "GoogleLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "GoogleLogo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "GoogleLogo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

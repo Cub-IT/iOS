@@ -35,13 +35,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cubImageSquare" translatesAutoresizingMaskIntoConstraints="NO" id="vuD-bq-aKt">
+                                <rect key="frame" x="95" y="120" width="225" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKx-TY-6TQ">
+                                <rect key="frame" x="46" y="518" width="323" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-mr-Xi0">
-                                <rect key="frame" x="160" y="528" width="95" height="44"/>
+                                <rect key="frame" x="160" y="582" width="95" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register">
                                     <color key="baseForegroundColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Im1-dR-6NW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -50,6 +63,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="7yL-xi-lIh" id="5VK-NM-20w"/>
                         <outlet property="passwordTextField" destination="1wr-hZ-SBc" id="Ipo-gw-JA6"/>
+                        <outlet property="passwordTextField2" destination="pKx-TY-6TQ" id="pUZ-Ke-Qda"/>
                         <outlet property="registerButton" destination="3xh-mr-Xi0" id="gNC-LI-ziP"/>
                         <outlet property="usernameTextField" destination="LAc-IM-QOw" id="8eM-wY-fkG"/>
                     </connections>
@@ -61,6 +75,7 @@
     </scenes>
     <color key="tintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
+        <image name="cubImageSquare" width="756" height="724"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
