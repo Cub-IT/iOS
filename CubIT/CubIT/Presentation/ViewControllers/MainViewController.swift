@@ -32,6 +32,7 @@ class MainViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         self.view.backgroundColor = .CustomColors.darkGray
         configureHomeController()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override var prefersStatusBarHidden: Bool{
@@ -68,15 +69,15 @@ class MainViewController: UIViewController, Storyboarded {
         }
     }
     
-    func configureLoginController() {
-        let homeController = LoginViewController()
-        homeController.delegate = self
-        centerVC = UINavigationController(rootViewController: homeController)
-        
-        view.addSubview(centerVC.view)
-        addChild(centerVC)
-        centerVC.didMove(toParent: self)
-    }
+//    func configureLoginController() {
+//        let homeController = LoginViewController()
+//        homeController.delegate = self
+//        centerVC = UINavigationController(rootViewController: homeController)
+//        
+//        view.addSubview(centerVC.view)
+//        addChild(centerVC)
+//        centerVC.didMove(toParent: self)
+//    }
     
     func showMenu(isExpand:Bool){
         if isExpand {

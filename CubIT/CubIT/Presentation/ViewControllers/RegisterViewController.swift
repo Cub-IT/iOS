@@ -11,24 +11,51 @@ class RegisterViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
+    @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var passwordTextField2: UITextField!
+    @IBOutlet weak var githubRegisterButton: UIButton!
+    @IBOutlet weak var googleRegisterButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var linkedinRegisterButton: UIButton!
     
     private let registerViewModel = RegisterViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-       
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        coordinator?.home()
+        coordinator?.mainscreen()
     }
     
+    @IBAction func backToLoginButtonTapped(_ sender: UIButton) {
+        coordinator?.login()
+    }
+    
+    @IBAction func githubRegisterButtonTap(_ sender: UIButton) {
+        sender.animateTap()
+    }
+    
+    @IBAction func googleRegisterButtonTap(_ sender: UIButton) {
+        sender.animateTap()
+    }
+    
+    @IBAction func linkedinRegisterButtonTap(_ sender: UIButton) {
+        sender.animateTap()
+    }
+}
+
+
+
+// MARK: - UI
+extension RegisterViewController{
     private func setUI(){
         view.backgroundColor = .CustomColors.darkGray
         setUsernameTextField()
@@ -36,6 +63,15 @@ class RegisterViewController: UIViewController, Storyboarded {
         setPasswordTextField()
         setRegisterButton()
         setPasswordTextField2()
+        setRegisterButtons()
+        setLoginButton()
+        
+    }
+    
+    private func setSignUpLabel(){
+        signUpLabel.text = registerViewModel.signUpLabelText
+        signUpLabel.textColor = .white
+        signUpLabel.font = .CustomFont.titleFont
     }
     
     private func setUsernameTextField(){
@@ -96,8 +132,35 @@ class RegisterViewController: UIViewController, Storyboarded {
         registerButton.titleLabel?.text = registerViewModel.registerButtonTitle
         registerButton.titleLabel?.font =  .CustomFont.defaultFont
         registerButton.titleLabel?.textColor = .white
-        registerButton.backgroundColor = .CustomColors.secondary
+        registerButton.backgroundColor = .CustomColors.green
         registerButton.layer.cornerRadius = 5
     }
+    
+    private func setRegisterButtons(){
+        let gitImage = UIImage(named: "GitHubLogo")
+        githubRegisterButton.setTitle("", for: .normal)
+        githubRegisterButton.setImage(gitImage, for: .normal)
+        githubRegisterButton.contentMode = .scaleAspectFill
+        
+        let googleImg = UIImage(named: "GoogleLogo")
+        googleRegisterButton.setTitle("", for: .normal)
+        googleRegisterButton.setImage(googleImg, for: .normal)
+        googleRegisterButton.contentMode = .scaleAspectFill
+        
+        
+        
+        let linkedinImg = UIImage(named: "LinkedInLogo")
+        linkedinRegisterButton.setImage(linkedinImg, for: .normal)
+        linkedinRegisterButton.setTitle("", for: .normal)
+        linkedinRegisterButton.imageView?.contentMode = .scaleAspectFill
+    }
 
+    private func setLoginButton(){
+        loginButton.titleLabel?.text = registerViewModel.loginButtonTitle
+        loginButton.titleLabel?.font =  .CustomFont.defaultFont
+        loginButton.titleLabel?.textColor = .systemBlue
+        loginButton.backgroundColor = .clear
+        loginButton.layer.cornerRadius = 5
+    }
+    
 }

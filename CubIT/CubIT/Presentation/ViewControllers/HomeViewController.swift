@@ -52,6 +52,12 @@ class HomeViewController: UIViewController, Storyboarded {
     }
     
     
+    @IBAction func logOutButtonTest(_ sender: Any) {
+//        UserDefaults.standard.set(false, forKey: "status")
+//                Switcher.updateRootVC()
+//        let loginVC = LoginViewController()
+//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginVC)
+    }
     
     
 }

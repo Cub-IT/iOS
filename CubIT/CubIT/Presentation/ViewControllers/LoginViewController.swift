@@ -30,6 +30,7 @@ class LoginViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        navigationController?.navigationBar.isHidden = true
 //        emailTextField.delegate = self
 //        passwordTextField.delegate = self
     }
@@ -41,11 +42,18 @@ class LoginViewController: UIViewController, Storyboarded {
     
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        correctTextField()
+        if correctTextField(){
+            coordinator?.mainscreen()
+        }
+        
+       
         
         
+//        let mainControlView = MainViewController()
+//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainControlView)
         
-        coordinator?.mainscreen()
+//        UserDefaults.standard.set(true, forKey: "status")
+//                Switcher.updateRootVC()
     }
     
     
@@ -181,7 +189,7 @@ extension LoginViewController {
 
 // MARK: - TextField Check
 extension LoginViewController {
-    func correctTextField(){
+    func correctTextField() -> Bool{
         let alert = UIAlertController(title: "Uncorrect data", message: "Please, check email or password", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         
@@ -189,9 +197,10 @@ extension LoginViewController {
         if emailTextField.text?.isEmpty ?? true || passwordTextField.text?.isEmpty ?? true{
             self.present(alert, animated: true, completion: nil)
                 // Display alert message
-                return;
+                return false
             }
         
+        return true
     }
 }
 
