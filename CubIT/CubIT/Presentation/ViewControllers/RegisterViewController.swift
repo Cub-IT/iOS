@@ -32,10 +32,12 @@ class RegisterViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
         coordinator?.mainscreen()
     }
     
     @IBAction func backToLoginButtonTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
         coordinator?.login()
     }
     

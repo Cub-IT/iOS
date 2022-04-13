@@ -37,7 +37,6 @@
 		479E430128020CA400543129 /* MenuOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E430028020CA300543129 /* MenuOptionModel.swift */; };
 		479E43032802FB4A00543129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479E43022802FB4A00543129 /* Assets.xcassets */; };
 		479E4305280314D000543129 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E4304280314D000543129 /* ButtonExtension.swift */; };
-		479E43082803205F00543129 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E43072803205F00543129 /* Switcher.swift */; };
 		479E431B28049E7400543129 /* Coordinator+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E431A28049E7400543129 /* Coordinator+Login.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 		479E430028020CA300543129 /* MenuOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionModel.swift; sourceTree = "<group>"; };
 		479E43022802FB4A00543129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		479E4304280314D000543129 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
-		479E43072803205F00543129 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		479E431A28049E7400543129 /* Coordinator+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+Login.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +129,6 @@
 			children = (
 				474B6BEC27F09A3800B0F5B1 /* Presentation */,
 				474B6BEB27F09A1E00B0F5B1 /* Resources */,
-				479E43062803202F00543129 /* Switcher */,
 				474B6BEA27F099FA00B0F5B1 /* Extensions */,
 				474B6BE927F099F200B0F5B1 /* Protocols */,
 				474B6BE827F099ED00B0F5B1 /* Models */,
@@ -262,14 +259,6 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		479E43062803202F00543129 /* Switcher */ = {
-			isa = PBXGroup;
-			children = (
-				479E43072803205F00543129 /* Switcher.swift */,
-			);
-			path = Switcher;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,7 +351,6 @@
 				474B6BFA27F09B5800B0F5B1 /* MainCoordinator.swift in Sources */,
 				479E42CA27FC7AC600543129 /* SideMenuViewController.swift in Sources */,
 				479E42C227FC63CA00543129 /* RegisterViewModel.swift in Sources */,
-				479E43082803205F00543129 /* Switcher.swift in Sources */,
 				479E431B28049E7400543129 /* Coordinator+Login.swift in Sources */,
 				479E42B827FC4C6C00543129 /* ColorExtension.swift in Sources */,
 				479E42C427FC72D600543129 /* FontExtension.swift in Sources */,

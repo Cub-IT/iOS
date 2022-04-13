@@ -13,24 +13,24 @@ class SideMenuTableViewCell: UITableViewCell {
     class var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
     
     
-//    @IBOutlet var iconImageView: UIImageView! = UIImageView()
-//    @IBOutlet var titleLabel: UILabel! = UILabel()
+    @IBOutlet var iconImageView: UIImageView! = UIImageView()
+    @IBOutlet var titleLabel: UILabel! = UILabel()
     
-    let iconImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
-        iv.tintColor = .white
-        return iv
-    }()
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .CustomFont.defaultFont
-        label.text = "Sample text"
-        return label
-    }()
+//    let iconImageView: UIImageView = {
+//        let iv = UIImageView()
+//        iv.contentMode = .scaleAspectFit
+//        iv.clipsToBounds = true
+//        iv.tintColor = .white
+//        return iv
+//    }()
+//
+//    let titleLabel: UILabel = {
+//        let label = UILabel()
+//        label.textColor = .white
+//        label.font = .CustomFont.defaultFont
+//        label.text = "Sample text"
+//        return label
+//    }()
     
     // MARK: - Init
     
@@ -64,10 +64,10 @@ class SideMenuTableViewCell: UITableViewCell {
         self.backgroundColor = .clear
         
         // Icon
-        //self.iconImageView.tintColor = .white
+        self.iconImageView.tintColor = .white
         
         // Title
-        //self.titleLabel.textColor = .white
+        self.titleLabel.textColor = .white
         self.titleLabel.font = .CustomFont.defaultFont
     }
 

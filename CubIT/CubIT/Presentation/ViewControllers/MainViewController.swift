@@ -50,9 +50,16 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     func configureHomeController() {
-        let homeController = HomeViewController()
-        homeController.delegate = self
-        centerVC = UINavigationController(rootViewController: homeController)
+        
+        let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+        let hview = vc!.view
+        vc?.delegate = self
+        centerVC = UINavigationController(rootViewController: vc!)
+        //let homeController = HomeViewController()
+        //let homeview = homeController.view
+//        homeController.delegate = self
+//        centerVC = UINavigationController(rootViewController: homeController)
         
         view.addSubview(centerVC.view)
         addChild(centerVC)
@@ -61,7 +68,10 @@ class MainViewController: UIViewController, Storyboarded {
     
     func configureMenuController() {
         if menuController == nil {
-            menuController = SideMenuViewController()
+            let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
+            menuController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
+            let menuView = menuController.view
+            //menuController = SideMenuViewController()
             menuController.delegate = self
             view.insertSubview(menuController.view, at: 0)
             addChild(menuController)

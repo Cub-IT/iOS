@@ -31,29 +31,24 @@ class LoginViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setUI()
         navigationController?.navigationBar.isHidden = true
+        navigationItem.hidesBackButton = true
 //        emailTextField.delegate = self
 //        passwordTextField.delegate = self
     }
     
 
     @IBAction func registerButtonTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
         coordinator?.register()
     }
     
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         if correctTextField(){
+            UserDefaults.standard.set(emailTextField.text, forKey: "status")
+            navigationController?.popViewController(animated: true)
             coordinator?.mainscreen()
         }
-        
-       
-        
-        
-//        let mainControlView = MainViewController()
-//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainControlView)
-        
-//        UserDefaults.standard.set(true, forKey: "status")
-//                Switcher.updateRootVC()
     }
     
     

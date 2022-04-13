@@ -12,8 +12,8 @@ class MainCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    init(naviagtionController: UINavigationController){
-        self.navigationController = naviagtionController
+    init(navigationController: UINavigationController){
+        self.navigationController = navigationController
     }
     
     
@@ -49,7 +49,7 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func back() {
+    func backMoveDisable() {
         navigationController.popViewController(animated: true)
     }
     

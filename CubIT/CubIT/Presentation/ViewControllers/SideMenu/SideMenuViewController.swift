@@ -67,7 +67,7 @@ class SideMenuViewController: UIViewController, Storyboarded {
     
     private func setUI(){
         view.backgroundColor = .CustomColors.secondary
-        //setLabel()
+        setLabel()
     }
     
     private func setLabel(){
