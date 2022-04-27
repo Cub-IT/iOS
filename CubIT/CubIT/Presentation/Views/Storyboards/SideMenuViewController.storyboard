@@ -14,22 +14,22 @@
             <objects>
                 <viewController storyboardIdentifier="SideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SideMenuViewController" customModule="CubIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="314" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EcF-ES-Ckc">
-                                <rect key="frame" x="0.0" y="115" width="314" height="689"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCube" translatesAutoresizingMaskIntoConstraints="NO" id="cpM-NC-G9K">
-                                <rect key="frame" x="108" y="30" width="98" height="63"/>
+                                <rect key="frame" x="158" y="30" width="98" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="3o2-DF-bmy"/>
                                     <constraint firstAttribute="width" constant="98" id="R6y-YW-20A"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Cube IT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-ZW-Qd4">
-                                <rect key="frame" x="38" y="826" width="238" height="36"/>
+                                <rect key="frame" x="88" y="826" width="238" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="238" id="RNQ-KX-egF"/>
                                     <constraint firstAttribute="height" constant="36" id="lKV-H6-TCM"/>
@@ -52,7 +52,6 @@
                             <constraint firstItem="EcF-ES-Ckc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lkO-bt-6S5"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="314" height="896"/>
                     <connections>
                         <outlet property="bottomLabel" destination="5Ul-ZW-Qd4" id="USG-W8-2aJ"/>
                         <outlet property="cubImage" destination="cpM-NC-G9K" id="Kd5-jI-7B6"/>

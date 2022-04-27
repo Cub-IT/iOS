@@ -28,55 +28,27 @@ class HomeViewController: UIViewController, Storyboarded {
         setUI()
         //coordinator?.back()
         navigationController?.isToolbarHidden = false
-        setNavigation()
-        testButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        self.navigationItem.title = "Home"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify") , style: .plain, target: self, action: #selector(sideMenuButtonTapped))
+    }
+    
+    @objc func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
+        print("Click On menuHandler")
+        delegate?.selectedCell(0)
+    }
+    
 
-        //self.view.addSubview(testButton)
-        
-    }
-    
-    @objc func buttonAction(sender: UIButton!) {
-        UserDefaults.standard.set(nil, forKey: "status")
-        print("Button tapped")
-        
-        let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
-        let view = vc!.view
-        navigationController?.pushViewController(vc!, animated: true)
-    }
-    
     private func setUI(){
         view.backgroundColor = .CustomColors.darkGray
-        setButton()
     }
-    
-    private func setButton(){
-        //sideMenuButton.setImage(UIImage(systemName: "text.justify"), for: .normal)
-        //sideMenuButton.tintColor = .white
-       // sideMenuButton.setTitle("", for: .normal)
-        //sideMenuButton.backgroundColor = .black
-    }
-    
-    func setNavigation(){
-        
-        self.navigationItem.title = "Home"
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify") , style: .plain, target: self, action: #selector(handleMenu))
-    }
-    
-    @objc func handleMenu(){
-        print("Click On menuHandler")
-        delegate?.handleMenuToggle(forMenuOption: nil)
-    }
-    
-    
+ 
     @IBAction func logOutButtonTest(_ sender: Any) {
         UserDefaults.standard.set(nil, forKey: "status")
         print("Button tapped")
         
         let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
-        let view = vc!.view
+        let _ = vc!.view
         
         navigationController?.popViewController(animated: true)
         navigationController?.pushViewController(vc!, animated: true)

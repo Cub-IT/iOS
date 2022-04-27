@@ -69,6 +69,13 @@ class SideMenuTableViewCell: UITableViewCell {
         // Title
         self.titleLabel.textColor = .white
         self.titleLabel.font = .CustomFont.defaultFont
+        
+//        self.layer.shadowColor = UIColor.black.cgColor
+//        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+//        self.layer.shadowRadius = 2.0
+//        self.layer.shadowOpacity = 0.1
+//        self.layer.masksToBounds = false
+//        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

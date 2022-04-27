@@ -36,7 +36,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IMO-uU-FVD">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="EiR-h0-Jbu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="EiR-h0-Jbu">
+                            <connections>
+                                <action selector="sideMenuButtonTapped:" destination="Y6W-OH-hqX" id="9VV-n1-oQp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
