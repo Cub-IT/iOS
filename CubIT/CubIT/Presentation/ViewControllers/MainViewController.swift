@@ -53,7 +53,7 @@ class MainViewController: UIViewController, Storyboarded {
         
         let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
-        let hview = vc!.view
+        let _ = vc!.view
         vc?.delegate = self
         centerVC = UINavigationController(rootViewController: vc!)
         //let homeController = HomeViewController()
@@ -70,7 +70,7 @@ class MainViewController: UIViewController, Storyboarded {
         if menuController == nil {
             let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
             menuController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
-            let menuView = menuController.view
+            let _ = menuController.view
             //menuController = SideMenuViewController()
             menuController.delegate = self
             view.insertSubview(menuController.view, at: 0)
