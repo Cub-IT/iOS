@@ -53,6 +53,12 @@ class MainCoordinator: Coordinator {
         navigationController.popViewController(animated: true)
     }
     
+    func settings(){
+        let vc = SettingsViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
 }
 
 

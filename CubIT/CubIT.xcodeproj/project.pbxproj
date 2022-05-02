@@ -17,6 +17,8 @@
 		474B6BFA27F09B5800B0F5B1 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474B6BF927F09B5800B0F5B1 /* MainCoordinator.swift */; };
 		474B6BFC27F0A82A00B0F5B1 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474B6BFB27F0A82A00B0F5B1 /* LoginViewController.storyboard */; };
 		474B6BFE27F0A85500B0F5B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474B6BFD27F0A85500B0F5B1 /* LoginViewController.swift */; };
+		4798FC13281D4FF900B6D55E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798FC12281D4FF900B6D55E /* SettingsViewController.swift */; };
+		4798FC15281D501500B6D55E /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4798FC14281D501500B6D55E /* SettingsViewController.storyboard */; };
 		479E42B827FC4C6C00543129 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E42B727FC4C6C00543129 /* ColorExtension.swift */; };
 		479E42BA27FC585000543129 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E42B927FC585000543129 /* LoginViewModel.swift */; };
 		479E42BE27FC619200543129 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479E42BD27FC619100543129 /* RegisterViewController.storyboard */; };
@@ -66,6 +68,8 @@
 		474B6BF927F09B5800B0F5B1 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		474B6BFB27F0A82A00B0F5B1 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		474B6BFD27F0A85500B0F5B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4798FC12281D4FF900B6D55E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = CubIT/Presentation/ViewControllers/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		4798FC14281D501500B6D55E /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		479E42B727FC4C6C00543129 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		479E42B927FC585000543129 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		479E42BD27FC619100543129 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				474B6BFD27F0A85500B0F5B1 /* LoginViewController.swift */,
 				479E42BF27FC61C600543129 /* RegisterViewController.swift */,
 				479E42C527FC773700543129 /* HomeViewController.swift */,
+				4798FC12281D4FF900B6D55E /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				479E42C727FC7A2C00543129 /* HomeViewController.storyboard */,
 				479E42CB27FC7AD400543129 /* SideMenuViewController.storyboard */,
 				479E42FC280045B500543129 /* MainViewController.storyboard */,
+				4798FC14281D501500B6D55E /* SettingsViewController.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				479E42CC27FC7AD400543129 /* SideMenuViewController.storyboard in Resources */,
 				479E42FD280045B500543129 /* MainViewController.storyboard in Resources */,
+				4798FC15281D501500B6D55E /* SettingsViewController.storyboard in Resources */,
 				474B6BE127F0996C00B0F5B1 /* LaunchScreen.storyboard in Resources */,
 				474B6BFC27F0A82A00B0F5B1 /* LoginViewController.storyboard in Resources */,
 				479E42C827FC7A2C00543129 /* HomeViewController.storyboard in Resources */,
@@ -356,6 +363,7 @@
 				479E42C427FC72D600543129 /* FontExtension.swift in Sources */,
 				474B6BD927F0996900B0F5B1 /* MainViewController.swift in Sources */,
 				474B6BF827F09B1F00B0F5B1 /* Storyboarded.swift in Sources */,
+				4798FC13281D4FF900B6D55E /* SettingsViewController.swift in Sources */,
 				474B6BD527F0996900B0F5B1 /* AppDelegate.swift in Sources */,
 				479E42FF2800831500543129 /* UIViewExtension.swift in Sources */,
 				479E42D927FC92C700543129 /* Coordinator+Register.swift in Sources */,
@@ -439,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -494,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -520,7 +528,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,7 +558,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -13,20 +13,11 @@ class HomeViewController: UIViewController, Storyboarded {
     
     var delegate: SideMenuViewControllerDelegate?
     
-    @IBOutlet weak var sideMenuButton: UIBarButtonItem!    
-    
-    var testButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        button.setTitle("Log out", for: .normal)
-        button.backgroundColor = .CustomColors.green
-        return button
-    }()
-    
-    
+    var currentSelectedCell: Int = 0
     
     override func viewDidLoad() {
         setUI()
-        //coordinator?.back()
+        self.title = "Home"
         navigationController?.isToolbarHidden = false
         self.navigationItem.title = "Home"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify") , style: .plain, target: self, action: #selector(sideMenuButtonTapped))
@@ -34,26 +25,12 @@ class HomeViewController: UIViewController, Storyboarded {
     
     @objc func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
         print("Click On menuHandler")
-        delegate?.selectedCell(0)
+        delegate?.selectedCell(currentSelectedCell)
     }
     
 
     private func setUI(){
         view.backgroundColor = .CustomColors.darkGray
-    }
- 
-    @IBAction func logOutButtonTest(_ sender: Any) {
-        UserDefaults.standard.set(nil, forKey: "status")
-        print("Button tapped")
-        
-        let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
-        let _ = vc!.view
-        
-        navigationController?.popViewController(animated: true)
-        navigationController?.pushViewController(vc!, animated: true)
-        //coordinator?.login()
-        
     }
     
     
