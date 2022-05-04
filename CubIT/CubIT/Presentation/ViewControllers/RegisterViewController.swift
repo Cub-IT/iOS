@@ -29,15 +29,19 @@ class RegisterViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setUI()
         navigationController?.navigationBar.isHidden = true
+        
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        coordinator?.backMoveDisable()
         coordinator?.mainscreen()
     }
     
     @IBAction func backToLoginButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        let allControllers = NSMutableArray(array: navigationController!.viewControllers)
+        allControllers.removeObject(at: allControllers.count - 1)
+        navigationController!.setViewControllers(allControllers as [AnyObject] as! [UIViewController], animated: false)
+        coordinator?.backMoveDisable()
         coordinator?.login()
     }
     
@@ -67,7 +71,6 @@ extension RegisterViewController{
         setPasswordTextField2()
         setRegisterButtons()
         setLoginButton()
-        
     }
     
     private func setSignUpLabel(){

@@ -19,6 +19,8 @@
 		474B6BFE27F0A85500B0F5B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474B6BFD27F0A85500B0F5B1 /* LoginViewController.swift */; };
 		4798FC13281D4FF900B6D55E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798FC12281D4FF900B6D55E /* SettingsViewController.swift */; };
 		4798FC15281D501500B6D55E /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4798FC14281D501500B6D55E /* SettingsViewController.storyboard */; };
+		4798FC1728213ABD00B6D55E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798FC1628213ABD00B6D55E /* HomeViewModel.swift */; };
+		4798FC1928213B2000B6D55E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798FC1828213B2000B6D55E /* SettingsViewModel.swift */; };
 		479E42B827FC4C6C00543129 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E42B727FC4C6C00543129 /* ColorExtension.swift */; };
 		479E42BA27FC585000543129 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E42B927FC585000543129 /* LoginViewModel.swift */; };
 		479E42BE27FC619200543129 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479E42BD27FC619100543129 /* RegisterViewController.storyboard */; };
@@ -70,6 +72,8 @@
 		474B6BFD27F0A85500B0F5B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4798FC12281D4FF900B6D55E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = CubIT/Presentation/ViewControllers/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		4798FC14281D501500B6D55E /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		4798FC1628213ABD00B6D55E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4798FC1828213B2000B6D55E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		479E42B727FC4C6C00543129 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		479E42B927FC585000543129 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		479E42BD27FC619100543129 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				479E42C127FC63CA00543129 /* RegisterViewModel.swift */,
 				479E42CD27FC854300543129 /* SideMenuModel.swift */,
 				479E430028020CA300543129 /* MenuOptionModel.swift */,
+				4798FC1628213ABD00B6D55E /* HomeViewModel.swift */,
+				4798FC1828213B2000B6D55E /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				474B6BFA27F09B5800B0F5B1 /* MainCoordinator.swift in Sources */,
 				479E42CA27FC7AC600543129 /* SideMenuViewController.swift in Sources */,
 				479E42C227FC63CA00543129 /* RegisterViewModel.swift in Sources */,
+				4798FC1928213B2000B6D55E /* SettingsViewModel.swift in Sources */,
 				479E431B28049E7400543129 /* Coordinator+Login.swift in Sources */,
 				479E42B827FC4C6C00543129 /* ColorExtension.swift in Sources */,
 				479E42C427FC72D600543129 /* FontExtension.swift in Sources */,
@@ -367,6 +374,7 @@
 				474B6BD527F0996900B0F5B1 /* AppDelegate.swift in Sources */,
 				479E42FF2800831500543129 /* UIViewExtension.swift in Sources */,
 				479E42D927FC92C700543129 /* Coordinator+Register.swift in Sources */,
+				4798FC1728213ABD00B6D55E /* HomeViewModel.swift in Sources */,
 				474B6BD727F0996900B0F5B1 /* SceneDelegate.swift in Sources */,
 				479E42C627FC773700543129 /* HomeViewController.swift in Sources */,
 				479E42D727FC928100543129 /* Coordinator+Home.swift in Sources */,

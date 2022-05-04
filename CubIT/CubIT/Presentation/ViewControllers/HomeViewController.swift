@@ -15,11 +15,13 @@ class HomeViewController: UIViewController, Storyboarded {
     
     var currentSelectedCell: Int = 0
     
+    let homeViewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         setUI()
         self.title = "Home"
         navigationController?.isToolbarHidden = false
-        self.navigationItem.title = "Home"
+        self.navigationItem.title = homeViewModel.title
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify") , style: .plain, target: self, action: #selector(sideMenuButtonTapped))
     }
     

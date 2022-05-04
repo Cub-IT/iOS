@@ -32,13 +32,14 @@ class LoginViewController: UIViewController, Storyboarded {
         setUI()
         navigationController?.navigationBar.isHidden = true
         navigationItem.hidesBackButton = true
+        coordinator?.backMoveDisable()
 //        emailTextField.delegate = self
 //        passwordTextField.delegate = self
+        
     }
     
 
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
         coordinator?.register()
     }
     
@@ -46,7 +47,6 @@ class LoginViewController: UIViewController, Storyboarded {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         if correctTextField(){
             UserDefaults.standard.set(emailTextField.text, forKey: "status")
-            navigationController?.popViewController(animated: true)
             coordinator?.mainscreen()
         }
     }
@@ -81,22 +81,10 @@ extension LoginViewController {
         setEmailTextField()
         setPasswordTextField()
         setLoginButton()
-        setImage()
         setSignInLabel()
         setLoginButtons()
         setNewUserLabel()
         setForgotPasswordButton()
-    }
-    
-    private func setImage(){
-        let maskLayer = CAGradientLayer()
-        maskLayer.frame = cubImage.bounds
-        maskLayer.shadowRadius = 5
-        maskLayer.shadowPath = CGPath(roundedRect: cubImage.bounds.insetBy(dx: 5, dy: 5), cornerWidth: 20, cornerHeight: 20, transform: nil)
-        maskLayer.shadowOpacity = 1
-        maskLayer.shadowOffset = CGSize.zero
-        maskLayer.shadowColor = UIColor.white.cgColor
-        cubImage.layer.mask = maskLayer
     }
     
     private func setSignInLabel(){

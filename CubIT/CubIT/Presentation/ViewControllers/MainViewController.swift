@@ -16,15 +16,13 @@ class MainViewController: UIViewController, Storyboarded {
     private var sideMenuViewController : SideMenuViewController!
     
     private var homeViewController : HomeViewController = {
-        let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        let vc = HomeViewController.instantiate()
         let _ = vc.view
         return vc
     }()
     
     private var settingsViewController: SettingsViewController = {
-        let storyboard = UIStoryboard(name: "SettingsViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        let vc = SettingsViewController.instantiate()
         let _ = vc.view
         return vc
     }()
@@ -45,8 +43,7 @@ class MainViewController: UIViewController, Storyboarded {
     func addSubviews(){
         //menu
         if sideMenuViewController == nil {
-            let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
-            sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
+            sideMenuViewController = SideMenuViewController.instantiate()
             let _ = sideMenuViewController.view
             sideMenuViewController.delegate = self
             view.insertSubview(sideMenuViewController.view, at: 0)
@@ -82,7 +79,7 @@ class MainViewController: UIViewController, Storyboarded {
             currentVC = settingsViewController
             homeViewController.currentSelectedCell = 2
         case 3:
-            let controller = HomeViewController()
+            let controller = HomeViewController.instantiate()
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         default:
             print("no cell")
@@ -137,8 +134,7 @@ extension MainViewController : SideMenuViewControllerDelegate{
     func selectedCell(_ row: Int) {
         if !isExpandMenu {
             if sideMenuViewController == nil {
-                let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
-                sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
+                sideMenuViewController =  SideMenuViewController.instantiate()
                 let _ = sideMenuViewController.view
                 sideMenuViewController.delegate = self
                 view.insertSubview(sideMenuViewController.view, at: 0)

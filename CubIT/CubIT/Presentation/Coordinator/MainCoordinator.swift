@@ -51,6 +51,7 @@ class MainCoordinator: Coordinator {
     
     func backMoveDisable() {
         navigationController.popViewController(animated: true)
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     func settings(){

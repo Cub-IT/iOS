@@ -11,6 +11,6 @@ extension MainCoordinator{
     func login(){
         let loginViewController = LoginViewController.instantiate()
         loginViewController.coordinator = self
-        navigationController.pushViewController(loginViewController, animated: true)
+        navigationController.pushViewController(loginViewController, animated: false)
     }
 }
