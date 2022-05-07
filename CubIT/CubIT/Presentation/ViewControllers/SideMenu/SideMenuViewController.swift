@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifer = "SideMenuTableViewCell"
+//private let reuseIdentifer = "SideMenuTableViewCell"
 
 
 protocol SideMenuViewControllerDelegate {
@@ -26,20 +26,14 @@ class SideMenuViewController: UIViewController, Storyboarded {
     
     var defaultHighlightedCell: Int = 0
     
-    var menu: [SideMenuModel] = [
-        SideMenuModel(icon: UIImage(systemName: "house.fill")!, title: "Home"),
-        SideMenuModel(icon: UIImage(systemName: "person")!, title: "Profile"),
-        SideMenuModel(icon: UIImage(systemName: "gear")!, title: "Settings"),
-        SideMenuModel(icon: UIImage(systemName: "hand.thumbsup.fill")!, title: "Like us on Github")
-    ]
-    
+    let menu = SideMenuModel().menuModel
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         // TableView
-        configureTableView()
+        setTableView()
         
     }
     
@@ -62,7 +56,7 @@ class SideMenuViewController: UIViewController, Storyboarded {
         bottomLabel.font =   .CustomFont.titleFont
     }
     
-    func configureTableView() {
+    func setTableView() {
         sideMenuTableView.delegate = self
         sideMenuTableView.dataSource = self
         

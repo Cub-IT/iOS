@@ -16,46 +16,6 @@ class SideMenuTableViewCell: UITableViewCell {
     @IBOutlet var iconImageView: UIImageView! = UIImageView()
     @IBOutlet var titleLabel: UILabel! = UILabel()
     
-//    let iconImageView: UIImageView = {
-//        let iv = UIImageView()
-//        iv.contentMode = .scaleAspectFit
-//        iv.clipsToBounds = true
-//        iv.tintColor = .white
-//        return iv
-//    }()
-//
-//    let titleLabel: UILabel = {
-//        let label = UILabel()
-//        label.textColor = .white
-//        label.font = .CustomFont.defaultFont
-//        label.text = "Sample text"
-//        return label
-//    }()
-    
-    // MARK: - Init
-    
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        
-//        backgroundColor = .clear
-//        selectionStyle = .none
-//        
-//        addSubview(iconImageView)
-//        iconImageView.translatesAutoresizingMaskIntoConstraints = false
-//        iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//        iconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 12).isActive = true
-//        iconImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//        iconImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-//        
-//        addSubview(titleLabel)
-//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//        titleLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 12).isActive = true
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -69,13 +29,6 @@ class SideMenuTableViewCell: UITableViewCell {
         // Title
         self.titleLabel.textColor = .white
         self.titleLabel.font = .CustomFont.defaultFont
-        
-//        self.layer.shadowColor = UIColor.black.cgColor
-//        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        self.layer.shadowRadius = 2.0
-//        self.layer.shadowOpacity = 0.1
-//        self.layer.masksToBounds = false
-//        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

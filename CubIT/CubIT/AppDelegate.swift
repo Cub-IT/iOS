@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.CustomFont.navigationFont!], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.CustomFont.navigationFont!], for: .disabled)
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor.CustomColors.darkGray
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         

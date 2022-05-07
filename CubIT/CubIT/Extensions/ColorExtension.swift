@@ -14,6 +14,19 @@ extension UIColor {
         static let darkGray = UIColor.init(netHex: 0x15161B)
         static let secondary = UIColor.init(netHex: 0x6C757D)
         static let green = UIColor.init(red: 35, green: 134, blue: 54)
+        
+        var randomColor: UIColor = {
+            let colors: [UIColor] = [
+                UIColor.init(netHex: 0xDEA057),
+                UIColor.init(netHex: 0xCE9461),
+                UIColor.init(netHex: 0x85586F),
+                UIColor.init(netHex: 0xA64B2A),
+                UIColor.init(netHex: 0x9FC088),
+                UIColor.init(netHex: 0x112B3C)
+            ]
+            
+            return colors.randomElement() ?? UIColor.red
+        }()
     }
     
     convenience init(red: Int, green: Int, blue: Int) {
