@@ -48,12 +48,18 @@ class SideMenuViewController: UIViewController, Storyboarded {
     private func setUI(){
         view.backgroundColor = .CustomColors.darkGray
         setLabel()
+        setImage()
+    }
+    
+    private func setImage(){
+        cubImage.frame = CGRect(x: view.width-130*2-30, y: 50, width: 60, height: 50)
     }
     
     private func setLabel(){
         bottomLabel.text = "Created by CubIT"
         bottomLabel.textColor = .white
         bottomLabel.font =   .CustomFont.titleFont
+        bottomLabel.frame = CGRect(x: view.width-130*2-115, y: 825, width: 230, height: 35)
     }
     
     func setTableView() {

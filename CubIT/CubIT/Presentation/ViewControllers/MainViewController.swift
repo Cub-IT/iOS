@@ -32,6 +32,10 @@ class MainViewController: UIViewController, Storyboarded {
     
     var isExpandMenu : Bool = false
     
+    var sideMenuShadowView: UIView!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,15 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     func addSubviews(){
+        //home
+        homeViewController.delegate = self
+        centerVC = UINavigationController(rootViewController: homeViewController)
+        view.addSubview(centerVC.view)
+        //view.insertSubview(centerVC.view, at: 0)
+        addChild(centerVC)
+        centerVC.didMove(toParent: self)
+        currentVC = homeViewController
+        
         //menu
         if sideMenuViewController == nil {
             sideMenuViewController = SideMenuViewController.instantiate()
@@ -51,13 +64,12 @@ class MainViewController: UIViewController, Storyboarded {
             sideMenuViewController.didMove(toParent: self)
         }
         
-        //home
-        homeViewController.delegate = self
-        centerVC = UINavigationController(rootViewController: homeViewController)
-        view.addSubview(centerVC.view)
-        addChild(centerVC)
-        centerVC.didMove(toParent: self)
-        currentVC = homeViewController
+        //shadow
+        self.sideMenuShadowView = UIView(frame: self.view.bounds)
+        self.sideMenuShadowView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.sideMenuShadowView.backgroundColor = .black
+        self.sideMenuShadowView.alpha = 0.0
+        homeViewController.view.addSubview(self.sideMenuShadowView)
     }
     
     func didSelectMenuOption(menuOption: Int) {
@@ -104,7 +116,8 @@ extension MainViewController {
         if shouldExpand {
             // show menu
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.centerVC.view.frame.origin.x = self.centerVC.view.frame.width - 80
+                self.centerVC.view.frame.origin.x = self.centerVC.view.frame.width - 130
+                self.sideMenuShadowView.alpha = 0.3
             }, completion: nil)
             
         } else {
@@ -112,6 +125,7 @@ extension MainViewController {
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.centerVC.view.frame.origin.x = 0
+                self.sideMenuShadowView.alpha = 0.0
             }) { (_) in
                 guard let row = row else { return }
                 self.didSelectMenuOption(menuOption: row)

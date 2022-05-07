@@ -12,7 +12,7 @@ extension UIColor {
    
     struct CustomColors{
         static let darkGray = UIColor.init(netHex: 0x15161B)
-        static let secondary = UIColor.init(netHex: 0x6C757D)
+        static let secondary = UIColor.init(netHex: 0x444444)
         static let green = UIColor.init(red: 35, green: 134, blue: 54)
         
         var randomColor: UIColor = {

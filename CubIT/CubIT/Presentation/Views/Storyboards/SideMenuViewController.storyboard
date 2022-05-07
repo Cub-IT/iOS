@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,37 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EcF-ES-Ckc">
-                                <rect key="frame" x="0.0" y="115" width="414" height="689"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="688"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCube" translatesAutoresizingMaskIntoConstraints="NO" id="cpM-NC-G9K">
-                                <rect key="frame" x="158" y="30" width="98" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="3o2-DF-bmy"/>
-                                    <constraint firstAttribute="width" constant="98" id="R6y-YW-20A"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Cube IT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-ZW-Qd4">
-                                <rect key="frame" x="88" y="826" width="238" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="RNQ-KX-egF"/>
-                                    <constraint firstAttribute="height" constant="36" id="lKV-H6-TCM"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered by Cube IT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-ZW-Qd4">
+                                <rect key="frame" x="88" y="825" width="230" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whiteCube" translatesAutoresizingMaskIntoConstraints="NO" id="cpM-NC-G9K">
+                                <rect key="frame" x="158" y="40" width="90" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.082721836859999995" green="0.085857607419999996" blue="0.10588515549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="cpM-NC-G9K" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8nH-Up-krY"/>
-                            <constraint firstItem="5Ul-ZW-Qd4" firstAttribute="top" secondItem="EcF-ES-Ckc" secondAttribute="bottom" constant="22" id="DRa-xf-TUE"/>
-                            <constraint firstItem="5Ul-ZW-Qd4" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="EOh-u0-C19"/>
                             <constraint firstItem="EcF-ES-Ckc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="VD7-RL-pnM"/>
-                            <constraint firstItem="EcF-ES-Ckc" firstAttribute="top" secondItem="cpM-NC-G9K" secondAttribute="bottom" constant="22" id="aUB-EQ-YRl"/>
-                            <constraint firstItem="cpM-NC-G9K" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="30" id="cAL-dv-lu0"/>
-                            <constraint firstItem="5Ul-ZW-Qd4" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="gKM-ij-r9w"/>
+                            <constraint firstItem="EcF-ES-Ckc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="70" id="alN-Sy-Lgv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="EcF-ES-Ckc" secondAttribute="bottom" constant="60" id="dc9-5C-dqv"/>
                             <constraint firstItem="EcF-ES-Ckc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lkO-bt-6S5"/>
                         </constraints>
                     </view>
